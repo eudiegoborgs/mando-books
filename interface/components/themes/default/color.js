@@ -1,10 +1,10 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles'
 
 export const colors = {
-  green: '#55FCB9',
-  purple: '#4b3786',
-  lightPurple: '#634f9d',
-  red: '#ff9494',
+  yellow: '#fbc02d',
+  errorRed: '#b71c1c',
+  lightRed: '#ff8a80',
+  red: '#f44336',
   white: '#fff',
 };
 
@@ -14,19 +14,18 @@ const theme = createTheme({
     contrastThreshold: 3,
     tonalOffset: 0.2,
     secondary: {
-      main: colors.green,
-      contrastText: colors.purple,
+      main: colors.yellow,
+      contrastText: colors.red,
     },
     primary: {
-      light: colors.lightPurple,
-      main: colors.purple,
-      // dark: will be calculated from palette.secondary.main,
+      light: colors.lightRed,
+      main: colors.red,
       contrastText: colors.white,
     },
     error: {
-      main: colors.red,
+      main: colors.errorRed,
     },
   },
-});
+})
 
-export default theme;
+export default theme
