@@ -1,0 +1,19 @@
+{
+  "name": "mando-books-api",
+  "version": "1.0.0",
+  "description": "Mando Books API is a back end application for sharing books between people.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books.git"
+  },
+  "author": "Diego Borges",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books/issues"
+  },
+  "homepage": "https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books#readme"
+}
