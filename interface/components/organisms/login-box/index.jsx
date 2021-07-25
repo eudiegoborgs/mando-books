@@ -8,6 +8,8 @@ import {
     Button
 } from '@material-ui/core'
 import { Input } from '../../atoms/input';
+import ApiClient from '../../../services/client/api';
+import Auth from '../../../services/auth';
 
 const style = css `
     margin: 0 auto;
@@ -26,16 +28,16 @@ const style = css `
     }
 `;
 
+
+const apiClient = new ApiClient();
 export const LoginBox = () => {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
-    const [test, setTest] = useState(null);
-    const onSubmitForm = event => {
-        event.preventDefault();
-        setTest({
-            email,
-            password,
-        })
+    const onSubmitForm = async (event) => {
+        event.preventDefault()
+        const result = await apiClient.auth({email, password})
+        Auth.login(result)
+        window.location.href = '/'
     }
 
     return (
@@ -54,7 +56,6 @@ export const LoginBox = () => {
                         type="password"
                         onChange={setPassword}
                     />
-                    {test && JSON.stringify(test)}
                     <CardActions>
                         <div className="action">
                             <Button href={`/register`} component="a" size="small" color="default">

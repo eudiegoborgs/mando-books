@@ -20,7 +20,7 @@ const style = css `
     }
 `;
 
-export const BookCard = ({id, title, image, description}) => (
+export const BookCard = ({id, title, image, description, amount}) => (
     <Card className={style}>
         <CardActionArea>
             <CardMedia
@@ -31,6 +31,9 @@ export const BookCard = ({id, title, image, description}) => (
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                     {title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Quantidade: {amount}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {description}

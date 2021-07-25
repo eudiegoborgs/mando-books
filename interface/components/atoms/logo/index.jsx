@@ -8,11 +8,13 @@ const style = css`
     .title {
         flex-grow: 1;
         text-transform: uppercase;
+        color: white;
+        text-decoration: none;
     }
     .icon {
         margin-right: 5px;
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
     }
 `;
 
@@ -26,7 +28,7 @@ export const Logo = () => (
             height={30}
             className="icon"
         />
-        <Typography variant="h6" className="title">
+        <Typography href="/" variant="h6" component="a" className="title">
             Mando Books
         </Typography>
     </div>

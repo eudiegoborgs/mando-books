@@ -4,12 +4,12 @@ import {
     Card,
     CardContent,
     Typography,
-    TextField,
-    FormControl,
     CardActions,
     Button
 } from '@material-ui/core'
 import { Input } from '../../atoms/input';
+import ApiClient from '../../../services/client/api';
+import Auth from '../../../services/auth';
 
 const style = css `
     margin: 0 auto;
@@ -28,21 +28,28 @@ const style = css `
     }
 `;
 
+const apiClient = new ApiClient();
+
 export const RegisterBox = () => {
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [passwordConfirmation, setPasswordConfirmation] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
-    const [test, setTest] = useState(null);
-    const onSubmitForm = event => {
+    const onSubmitForm = async (event) => {
         event.preventDefault();
         if (password !== passwordConfirmation) {
             setPasswordError('As senhas não são iguais');
         }
-        setTest({
-            name, email, password, passwordConfirmation
+
+        const result = await apiClient.register({
+            name,
+            email,
+            password
         })
+
+        Auth.login(result)
+        window.location.href = '/'
     }
     return (
         <form className={style} onSubmit={onSubmitForm}>
@@ -73,7 +80,6 @@ export const RegisterBox = () => {
                         type="password"
                         onChange={setPasswordConfirmation}
                     />
-                    {test && JSON.stringify(test)}
                     <CardActions>
                         <div className="action">
                             <Button href={`/login`} component="a" size="small" color="default">

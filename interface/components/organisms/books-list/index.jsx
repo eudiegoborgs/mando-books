@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/css'
 import { BookCard } from '../../molecules/book-card'
 import { Grid } from '@material-ui/core'
+import ApiClient from '../../../services/client/api'
 
 const style = css `
 `;
 
-export const BooksList = () => (
-    <div>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item => (
-            <Grid item xs={4}>
-                <BookCard 
-                    id={item}
-                    title="Arquitetura Limpa"
-                    description = "As regras universais de arquitetura de software aumentam dramaticamente a produtividade dos desenvolvedores ao longo da vida dos sistemas de software. Agora, aproveitando o sucesso dos seus best-sellers Código Limpo e O Codificador Limpo, o lendário artesão de software Robert C..."
-                    image="https://pbs.twimg.com/media/EWyU7aPXYAAmV9R.jpg:large"
-                />
-            </Grid>
-        ))}
-    </div>
-)
+const apiClient = new ApiClient()
+
+export const BooksList = () => {
+    const [books, setBooks] = useState([])
+
+    const getBooks = async () => {
+        const result = await apiClient.getBooksList()
+        setBooks(result)
+    }
+
+    useEffect(() => {
+        getBooks()
+    }, [])
+    return books.map(item => (
+        <Grid item xs={4}>
+            <BookCard 
+                id={item.id}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                amount={item.amount}
+            />
+        </Grid>
+    ))
+}

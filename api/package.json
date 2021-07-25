@@ -2,10 +2,6 @@
   "name": "mando-books-api",
   "version": "1.0.0",
   "description": "Mando Books API is a back end application for sharing books between people.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books.git"
@@ -15,5 +11,34 @@
   "bugs": {
     "url": "https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books/issues"
   },
-  "homepage": "https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books#readme"
+  "homepage": "https://github.com/%7Bseu_usu%C3%A1rio%7D/mando-books#readme",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "test": "jest",
+    "start": "npm run build && node ./lib/index.js",
+    "start:prd": "NODE_ENV=production npm start"
+  },
+  "main": "lib/index.js",
+  "engines": {
+    "node": "12"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/jest": "^25.2.2",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
+    "ts-sinon": "^1.2.0",
+    "tslint": "~5.8.0",
+    "typescript": "^3.9.2"
+  }
 }
