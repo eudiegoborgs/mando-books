@@ -8,10 +8,10 @@ export default class UserService {
     {
         const user = this.repo.findByEmail(email)
         if (!user) {
-            throw new Error("User not found")
+            throw {code: 404, message: "Usuário não encontrado."}
         }
         if (user.password !== password) {
-            throw new Error("Unauthorized")
+            throw {code: 401, message: "Senha invalida."}
         }
 
         return user
@@ -21,7 +21,7 @@ export default class UserService {
     {
         const userWithSameEmail = this.repo.findByEmail(data.email)
         if (userWithSameEmail) {
-            throw new Error("has another user with this email")
+            throw {code: 403, message: "Já existe outro cadastro com esse e-mail"}
         }
         this.repo.create(data)
         return this.repo.findByEmail(data.email)

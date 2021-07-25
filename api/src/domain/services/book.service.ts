@@ -18,7 +18,7 @@ export default class BookService {
     {
         const book = this.get(id)
         if (book.amount < 1) {
-            throw new Error("Don't have books to share");
+            throw {code: 403, message: "Não existem livros disponiveis para emprestar."};
         }
         book.amount--;
         this.repo.update(id, book)

@@ -25,7 +25,7 @@ export default class LocalMemoryDataBase {
                 return
             }
         }
-        throw new Error("Id not find")
+        throw {code: 404, message: `Item com o id: ${id} não encontrado na collection: ${collection}`}
     }
 
     static getAllOnCollection(collection: string)
