@@ -3,7 +3,7 @@ import { css } from '@emotion/css'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from './color'
-import { Container } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core'
 
 const style = css `
     margin: 0;
@@ -20,7 +20,9 @@ export const DefaultTheme = ({children}) => (
             <Navbar />
             <main className="main">
                 <Container> 
-                    {children}
+                    <Grid container spacing={3} className={style}>
+                        {children}
+                    </Grid>
                 </Container>
             </main>
         </div>

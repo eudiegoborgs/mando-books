@@ -18,8 +18,8 @@ export const Navbar = () => (
         <AppBar position="static">
             <Toolbar>
                 <Logo />
-                <Button href="#" component="a" color="inherit">Login</Button>
-                <Button href="#" component="a" color="secondary" variant="contained">Registre-se</Button>
+                <Button href="/login" component="a" color="inherit">Login</Button>
+                <Button href="/register" component="a" color="secondary" variant="contained">Registre-se</Button>
             </Toolbar>
         </AppBar>
     </div>
