@@ -14,3 +14,68 @@ Para instalar as dependencias do projeto rode o comando `npm install` nas pastas
 
 Execute o projeto com o comando `npm start` nas pastas interface e api.
 
+## Prática com o Cypress
+
+Para praticarmos o que aprendemos até aqui, iremos criar os seguintes testes end to end com o cypress para este projeto:
+
+1 - Cenário de cadastro com sucesso:
+```
+Dado que você deseja criar uma conta
+    E informou "um e-mail que ainda não está cadastrado"
+    E informou "uma senha com mais de 8 caracteres"
+    E informou "um nome válido"
+Quando entrar com essas informações no formulário de cadastro
+Então uma nova conta deve ser criada e autenticada no sistema
+```
+
+2 - Cenário de cadastro com com erro por e-mail já existente:
+```
+Dado que você deseja criar uma conta
+    E informou "um e-mail que já está cadastrado"
+    E informou "uma senha com mais de 8 caracteres"
+    E informou "um nome válido"
+Quando entrar com essas informações no formulário de cadastro
+Então uma mensagem de "Este e-mail já está vinculada a outra conta" deverá ser retornada
+```
+
+3 - Cenário de login com sucesso:
+```
+Dado que você deseja fazer login no sistema
+    E informou "um e-mail que está cadastrado no sistema"
+    E informou "uma senha correta"
+Quando entrar com essas informações no formulário de login
+Então a conta deve ser autenticada no sistema
+```
+
+4 - Cenário de login com com erro por e-mail que não existe:
+```
+Dado que você deseja fazer login no sistema
+    E informou "um e-mail que não está cadastrado no sistema"
+    E informou "uma senha correta"
+Quando entrar com essas informações no formulário de cadastro
+Então uma mensagem de "O e-mail informado não existe no nosso sistema" deverá ser retornada
+```
+
+5 - Cenário de login com com erro por senha invalida:
+```
+Dado que você deseja fazer login no sistema
+    E informou "um e-mail que está cadastrado no sistema"
+    E informou "uma senha incorreta"
+Quando entrar com essas informações no formulário de cadastro
+Então uma mensagem de "A senha informada está incorreta" deverá ser retornada
+```
+
+6 - Cenário de listar livros com sucesso:
+```
+Dado que você deseja ver a lista de livros disponiveis no sistema
+Quando entrar na pagina de listagem
+Então deve encontrar o livro "Arquitetura Limpa" como o primeiro livro da lista
+```
+
+7 - Cenário de ver detalhes de um livro com sucesso:
+```
+Dado que você deseja ver detalhes de um livro
+    E selecionou o livro "Arquitetura Limpa" na lista
+Quando entrar na pagina de detalhes
+Então deve encontrar o titulo "Arquitetura Limpa"
+```
