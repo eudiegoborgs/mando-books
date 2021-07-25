@@ -7,6 +7,7 @@ import {
     CardActions,
     Button
 } from '@material-ui/core'
+import Alert from '@material-ui/lab/Alert'
 import { Input } from '../../atoms/input';
 import ApiClient from '../../../services/client/api';
 import Auth from '../../../services/auth';
@@ -36,6 +37,7 @@ export const RegisterBox = () => {
     const [password, setPassword] = useState(null);
     const [passwordConfirmation, setPasswordConfirmation] = useState(null);
     const [passwordError, setPasswordError] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
     const onSubmitForm = async (event) => {
         event.preventDefault();
         if (password !== passwordConfirmation) {
@@ -47,12 +49,16 @@ export const RegisterBox = () => {
             email,
             password
         })
+        if (result.error) {
+            setErrorMessage(result.message)
+            return;
+        }
 
         Auth.login(result)
         window.location.href = '/'
     }
     return (
-        <form className={style} onSubmit={onSubmitForm}>
+        <form className={style} onSubmit={onSubmitForm} id="register-form">
             <Card className="card">
                 <CardContent>
                     <Typography variant="h5" component="h2">
@@ -80,6 +86,7 @@ export const RegisterBox = () => {
                         type="password"
                         onChange={setPasswordConfirmation}
                     />
+                    {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
                     <CardActions>
                         <div className="action">
                             <Button href={`/login`} component="a" size="small" color="default">

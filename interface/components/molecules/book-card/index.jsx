@@ -21,7 +21,7 @@ const style = css `
 `;
 
 export const BookCard = ({id, title, image, description, amount}) => (
-    <Card className={style}>
+    <Card className={style} id={`book-card-${id}`}>
         <CardActionArea>
             <CardMedia
                 className="media"
@@ -29,10 +29,10 @@ export const BookCard = ({id, title, image, description, amount}) => (
                 title={title}
                 />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h5" component="h2" id={`book-card-title-${id}`}>
                     {title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textSecondary" component="p" id={`book-card-amount-${id}`}>
                     Quantidade: {amount}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -42,10 +42,10 @@ export const BookCard = ({id, title, image, description, amount}) => (
         </CardActionArea>
         <CardActions>
             <div className="action">
-                <Button href={`/book/${id}`} component="a" size="small" color="primary">
+                <Button href={`/book/${id}`} component="a" size="small" color="primary" id={`book-card-see-more-${id}`}>
                     Veja mais
                 </Button>
-                <Button size="small" color="primary" variant="contained" startIcon={<ShoppingCartIcon />}>
+                <Button size="small" color="primary" variant="contained" startIcon={<ShoppingCartIcon />} id={`book-card-share-${id}`}>
                     Pegar
                 </Button>
             </div>

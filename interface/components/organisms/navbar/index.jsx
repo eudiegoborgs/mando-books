@@ -21,13 +21,13 @@ const MenuOptions = ({isLogged, name}) => {
     }
     if (isLogged) {
         return [
-            (<Button color="inherit">Oi {name}</Button>),
-            (<Button color="inherit" color="secondary" variant="contained" onClick={logout}>Sair</Button>),
+            (<Button color="inherit" id="navbar-user-name">Oi {name}</Button>),
+            (<Button color="inherit" color="secondary" variant="contained" onClick={logout} id="logout">Sair</Button>),
         ]
     }
     return [
-        (<Button href="/login" component="a" color="inherit">Login</Button>),
-        (<Button href="/register" component="a" color="secondary" variant="contained">Registre-se</Button>)
+        (<Button href="/login" component="a" color="inherit" id="login">Login</Button>),
+        (<Button href="/register" component="a" color="secondary" variant="contained" id="register">Registre-se</Button>)
     ]
 }
 

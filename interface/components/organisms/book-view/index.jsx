@@ -48,27 +48,27 @@ export const BookView = ({id}) => {
 
     const {title, image, description, amount} = book
     return (
-        <Card className={style}>
+        <Card className={style} id={`book-view-${id}`}>
             <CardMedia
                 className="media"
                 image={image}
                 title={title}
                 />
             <CardContent className="content">
-                <Typography variant="h3" component="h2" gutterBottom>
+                <Typography variant="h3" component="h2" gutterBottom id={`book-view-title-${id}`}>
                     {title}
                 </Typography>
                 <Typography component="p">
                     ID: {id}
                 </Typography>
-                <Typography component="small">
+                <Typography component="small" id={`book-view-amount-${id}`}>
                     Disponiveis: {amount}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {description}
                 </Typography>
                 <CardActions>
-                    <Button size="large" color="primary" variant="contained" startIcon={<ShoppingCartIcon />}>
+                    <Button size="large" color="primary" variant="contained" startIcon={<ShoppingCartIcon />} id={`book-view-share-${id}`}>
                         Pegar
                     </Button>
                 </CardActions>
