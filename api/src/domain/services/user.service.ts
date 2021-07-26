@@ -21,7 +21,7 @@ export default class UserService {
     {
         const userWithSameEmail = this.repo.findByEmail(data.email)
         if (userWithSameEmail) {
-            throw {code: 403, message: "Já existe outro cadastro com esse e-mail"}
+            throw {code: 403, message: "Já existe outro cadastro com esse e-mail."}
         }
         this.repo.create(data)
         return this.repo.findByEmail(data.email)

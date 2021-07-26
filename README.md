@@ -35,7 +35,7 @@ Dado que você deseja criar uma conta
     E informou "uma senha com mais de 8 caracteres"
     E informou "um nome válido"
 Quando entrar com essas informações no formulário de cadastro
-Então uma mensagem de "Este e-mail já está vinculada a outra conta" deverá ser retornada
+Então uma mensagem de "Já existe outro cadastro com esse e-mail." deverá ser retornada
 ```
 
 3 - Cenário de login com sucesso:
@@ -53,7 +53,7 @@ Dado que você deseja fazer login no sistema
     E informou "um e-mail que não está cadastrado no sistema"
     E informou "uma senha correta"
 Quando entrar com essas informações no formulário de cadastro
-Então uma mensagem de "O e-mail informado não existe no nosso sistema" deverá ser retornada
+Então uma mensagem de "Usuário não encontrado." deverá ser retornada
 ```
 
 5 - Cenário de login com com erro por senha invalida:
@@ -62,7 +62,7 @@ Dado que você deseja fazer login no sistema
     E informou "um e-mail que está cadastrado no sistema"
     E informou "uma senha incorreta"
 Quando entrar com essas informações no formulário de cadastro
-Então uma mensagem de "A senha informada está incorreta" deverá ser retornada
+Então uma mensagem de "Senha invalida." deverá ser retornada
 ```
 
 6 - Cenário de listar livros com sucesso:
