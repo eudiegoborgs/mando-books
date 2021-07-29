@@ -10,11 +10,13 @@ jobs:
       - name: Start Api
         run: |
           cd api
+          npm install
           npm start
 
       - name: Start App
         run: |
           cd interface
+          npm install
           NODE_ENV=test npm build
           NODE_ENV=test npm start &
 
