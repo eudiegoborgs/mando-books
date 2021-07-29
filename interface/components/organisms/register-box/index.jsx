@@ -11,6 +11,7 @@ import Alert from '@material-ui/lab/Alert'
 import { Input } from '../../atoms/input';
 import ApiClient from '../../../services/client/api';
 import Auth from '../../../services/auth';
+import { ReCaptcha } from '../../atoms/recaptcha';
 
 const style = css `
     margin: 0 auto;
@@ -87,6 +88,7 @@ export const RegisterBox = () => {
                         onChange={setPasswordConfirmation}
                     />
                     {errorMessage && <Alert severity="error">{errorMessage}</Alert>}
+                    <ReCaptcha />
                     <CardActions>
                         <div className="action">
                             <Button href={`/login`} component="a" size="small" color="default">
