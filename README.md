@@ -10,9 +10,9 @@ Dentro deste repositório você encontrará o front e o back end deste projeto.
 
 Faça um fork deste projeto e use o git para baixar para a sua máquina com o comando `git clone https://github.com/{seu_usuário}/mando-books.git`
 
-Para instalar as dependencias do projeto rode o comando `npm install` nas pastas interface e api.
+Para instalar as dependencias do projeto rode o comando `npm install` nas pastas raiz, interface e api.
 
-Execute o projeto com o comando `npm start` nas pastas interface e api.
+Execute o projeto com o comando `npm start` na pasta api e `npm run dev` na pasta interface.
 
 ## Prática com o Cypress
 
