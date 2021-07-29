@@ -6,7 +6,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Start Api
+        run: |
+          cd api
+          npm start
+
+      - name: Start App
+        run: |
+          cd interface
+          NODE_ENV=test npm build
+          NODE_ENV=test npm start &
+
+      - name: Run E2E
+        run: |
+          npm test
+
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+      
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Cypress E2E Videos
+          path: cypress/videos
