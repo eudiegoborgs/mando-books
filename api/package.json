@@ -20,9 +20,6 @@
     "start:prd": "NODE_ENV=production npm start"
   },
   "main": "lib/index.js",
-  "engines": {
-    "node": "12"
-  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
