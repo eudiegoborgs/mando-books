@@ -79,3 +79,17 @@ Dado que você deseja ver detalhes de um livro
 Quando entrar na pagina de detalhes
 Então deve encontrar o titulo "Arquitetura Limpa"
 ```
+## Prática com o Jest
+
+Para praticarmos o que aprendemos até aqui, iremos criar testes de integração que validem os mesmos cenários da tarefa anterior, mas para não virar rotina teremos um cenário extra
+
+8 - Cenário de cadastro de livro com sucesso:
+```
+Dado que você deseja criar um livro
+    E informou "um título"
+    E informou "um autor"
+    E informou "uma descrição"
+    E informou "uma quantidade maior que 0"
+Quando entrar com essas informações no formulário de cadastro
+Então um novo livro deve ser criado no sistema
+```
