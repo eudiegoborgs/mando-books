@@ -99,6 +99,7 @@ Então um novo livro deve ser criado no sistema
 No dia 14 de agosto teremos nossa ultima aula e ainda não estou seguro sobre o melhor horário para que ela aconteça, para me ajudar nessa decisão e também gerar um pouco mais de prática resolvi criar esse desafio que consiste em resolver só um cenário e enviar um vídeo gravado pelo Cypress para o e-mail `ferreirabdiego@gmail.com`.
 
 PS: O primeiro a completar o desafio será o ganhador do cupom.
+
 PS_2: Desafios feitos durante o horário de aula serão desqualificados.
 
 As opções de horários de inicio e fim são:
