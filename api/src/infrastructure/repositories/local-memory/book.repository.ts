@@ -14,11 +14,11 @@ export default class BookRepository implements BookRepositoryInterface {
         return data as BookEntity
     }
 
-    create(book: BookEntity): void {
-        LocalMemoryDataBase.insertOnCollection(this.COLLECTION_NAME, book)
+    create(book: BookEntity): number {
+        return LocalMemoryDataBase.insertOnCollection(this.COLLECTION_NAME, book)
     }
 
-    update(id: number, book: BookEntity): void {
-        LocalMemoryDataBase.updateOnCollection(this.COLLECTION_NAME, id, book)
+    update(id: number, book: BookEntity): boolean {
+        return LocalMemoryDataBase.updateOnCollection(this.COLLECTION_NAME, id, book)
     }
 }

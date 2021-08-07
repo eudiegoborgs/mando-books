@@ -29,6 +29,7 @@ router.get("/healthcheck", healthcheck.ready);
 router.post("/users/auth", errorHandler(user.auth));
 router.post("/users/register", errorHandler(user.create));
 router.get("/books", errorHandler(book.list));
+router.post("/books", errorHandler(book.register));
 router.get("/books/:id/show", errorHandler(book.show));
 router.patch("/books/:id/purchase", errorHandler(book.purchase));
 

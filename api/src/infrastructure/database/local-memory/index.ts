@@ -13,7 +13,9 @@ export default class LocalMemoryDataBase {
     static insertOnCollection(collection: string, data: object)
     {
         const datalist = this.getCollection(collection)
-        datalist.push({ id: datalist.length + 1, ...data })
+        const id = datalist.length + 1
+        datalist.push({ id, ...data })
+        return id
     }
 
     static updateOnCollection(collection: string, id: number, data: object)
@@ -22,7 +24,7 @@ export default class LocalMemoryDataBase {
         for (let i = 0; i < datalist.length; i++) {
             if (datalist[i].id === id) {
                 datalist = { ...data, id }
-                return
+                return true
             }
         }
         throw {code: 404, message: `Item com o id: ${id} não encontrado na collection: ${collection}`}

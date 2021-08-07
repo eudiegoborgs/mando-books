@@ -24,4 +24,10 @@ export default class BookService {
         this.repo.update(id, book)
         return this.get(id)
     }
+
+    create(book: BookEntity): BookEntity
+    {
+        const id = this.repo.create(book)
+        return this.get(id)
+    }
 }
