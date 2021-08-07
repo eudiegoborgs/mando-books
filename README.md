@@ -105,7 +105,7 @@ As opções de horários de inicio e fim são:
 
 ### Dúvida 1:
 - Aluno diz: Ah professor! Mas vc não mostrou como grava vídeo no Cypress... Como vou saber como faz isso? 
-- Diego diz: Olha na documentação oficial do cypress https://cypress.io[https://cypress.io]
+- Diego diz: Olha na documentação oficial do cypress https://cypress.io
 
 ### Dúvida 2:
 - Aluno diz: Ah professor... Esse negócio de ler documentação é chato dms.
