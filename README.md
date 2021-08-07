@@ -93,3 +93,33 @@ Dado que você deseja criar um livro
 Quando entrar com essas informações no formulário de cadastro
 Então um novo livro deve ser criado no sistema
 ```
+
+## DESAFIO EXTRA [VALENDO UM CUPOM DE R$ 50,00 NO IFOOD]: 
+
+No dia 14 de agosto teremos nossa ultima aula e ainda não estou seguro sobre o melhor horário para que ela aconteça, para me ajudar nessa decisão e também gerar um pouco mais de prática resolvi criar esse desafio que consiste em resolver só um cenário e enviar um vídeo gravado pelo Cypress para o e-mail `ferreirabdiego@gmail.com`.
+
+As opções de horários de inicio e fim são:
+- 10:00 às 12:00
+- 15:00 às 17:00
+- 19:00 às 21:00
+
+### Dúvida 1:
+- Aluno diz: Ah professor! Mas vc não mostrou como grava vídeo no Cypress... Como vou saber como faz isso? 
+- Diego diz: Olha na documentação oficial do cypress https://cypress.io[https://cypress.io]
+
+### Dúvida 2:
+- Aluno diz: Ah professor... Esse negócio de ler documentação é chato dms.
+- Diego diz: Olha os exemplos que o Cypress gera quando é instalado
+
+### Cenário:
+```
+Dado que você deseja enviar sua votação sobre o melhor horário disponível para a realização da aula
+    E acessou "http://diegoborgs.com.br/"
+    E clicou em "CONTATO"
+    E informou "seu nome"
+    E informou "seu e-mail"
+    E informou "uma mensagem" 
+    com os seguintes dados "Eu gostaria que a aula do dia 14 de agosto acontecesse de {hora_de_inicio} até a {hora_de_fim}"
+Quando entrar com essas informações no formulário de contato
+Então você será redirecionado para uma mensagem de agradecimento
+```
