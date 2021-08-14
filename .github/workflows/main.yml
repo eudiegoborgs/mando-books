@@ -12,11 +12,6 @@ jobs:
           npm run start:api &
           npm run start:interface &
           npm test
-
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
       
       - uses: actions/upload-artifact@v2
         if: always()
