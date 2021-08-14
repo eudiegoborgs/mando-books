@@ -7,21 +7,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Start Api
-        run: |
-          cd api
-          npm install
-          npm start
-
-      - name: Start App
-        run: |
-          cd interface
-          npm install
-          NODE_ENV=test npm build
-          NODE_ENV=test npm start &
-
       - name: Run E2E
         run: |
+          npm start:api &
+          npm start:interface &
           npm test
 
       # Install NPM dependencies, cache them correctly

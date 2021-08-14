@@ -4,7 +4,9 @@
   "description": "![Mando Books Icon](./assets/icon.png)",
   "main": "index.js",
   "scripts": {
-    "start": "cd api && cd ../interface",
+    "start:api": "cd api && npm i && npm start",
+    "go-to-default-path": "cd ..",
+    "start:interface": "cd interface && npm i && npm run dev",
     "test": "npm start && npx cypress run"
   },
   "repository": {
