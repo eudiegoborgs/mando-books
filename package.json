@@ -7,7 +7,7 @@
     "start:api": "cd api && npm i && npm run-script start",
     "go-to-default-path": "cd ..",
     "start:interface": "cd interface && npm i && npm run-script dev",
-    "test": "npm start && npx cypress run"
+    "test": "npx cypress run"
   },
   "repository": {
     "type": "git",
