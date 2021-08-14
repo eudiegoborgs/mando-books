@@ -9,8 +9,8 @@ jobs:
 
       - name: Run E2E
         run: |
-          npm start:api &
-          npm start:interface &
+          npm run start:api &
+          npm run start:interface &
           npm test
 
       # Install NPM dependencies, cache them correctly
